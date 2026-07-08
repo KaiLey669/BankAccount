@@ -3,11 +3,12 @@ class BankAccount:
         self.__balance = balance
         self.__deposit = 0
 
-    def get_balance(self):
-        return self.__balance
-
-    def get_deposit(self):
-        return self.__deposit
+    def add_money_to_balance(self, amount):
+        if amount <= 0:
+            print("Пополнение должно быть больше 0.")
+            return
+        self.__balance += amount
+        print(f"Баланс пополнен. Текущий баланс: {self.__balance}")
 
     def print_balance(self):
         print(f"Текущий баланс: {self.__balance}")
@@ -44,3 +45,4 @@ bank_account.add_money_to_deposit(30)
 bank_account.print_balance()
 bank_account.withdraw_money(100)
 bank_account.add_money_to_deposit(100)
+bank_account.add_money_to_balance(50)
